@@ -1,0 +1,27 @@
+/* Первый экран: видео проигрывается скроллом (как на sharplink.com). Экран «залипает», пока идёт видео. */
+.scrub-hero{position:relative}
+.scrub-hero.scrub-on{height:calc(100svh * 3.4)}
+.scrub-hero.scrub-on .welcome-stage{position:sticky;top:0;height:100svh;min-height:0}
+.scrub-hero .hero-landscape{background:#0f1013}
+.scrub-hero .hero-landscape img,.scrub-hero .hero-landscape video{object-position:50% 50%;image-rendering:auto}
+
+/* Затемнение слева, чтобы белый текст читался на светлой нижней части видео */
+.scrub-hero .welcome-shade{
+  background:linear-gradient(90deg,rgba(15,16,19,.78) 0%,rgba(15,16,19,.58) 42%,rgba(15,16,19,.12) 72%,transparent 100%);
+  mask-image:linear-gradient(to bottom,#000 0%,#000 82%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 82%,transparent 100%)}
+/* Цвета шапки под серо-графитовую палитру сайта */
+.scrub-hero .welcome-wordmark span{color:#dce2ff}
+.scrub-hero .welcome-nav{background:rgba(15,16,19,.45);border-color:#ffffff2e}
+.scrub-hero .welcome-nav a{text-shadow:0 1px 4px #0008}
+.scrub-hero .welcome-header .welcome-lang{background:rgba(15,16,19,.4);border-color:#ffffff40;box-shadow:inset 0 1px 1px #ffffff20}
+.scrub-hero .welcome-eyebrow,.scrub-hero .welcome-title-soft{color:#dce2ff}
+
+/* Текст уходит вверх и гаснет по мере проигрывания видео (--out задаёт скрипт) */
+.scrub-hero.scrub-on .welcome-content{padding-bottom:0;opacity:calc(1 - var(--out,0));transform:translateY(calc(var(--out,0) * -48px));will-change:opacity,transform}
+.scrub-hero.scrub-out .welcome-content{pointer-events:none}
+
+@media(prefers-reduced-motion:reduce){
+  .scrub-hero.scrub-on{height:auto}
+  .scrub-hero.scrub-on .welcome-stage{position:relative;height:auto;min-height:max(720px,100svh)}
+  .scrub-hero.scrub-on .welcome-content{opacity:1;transform:none}
+}

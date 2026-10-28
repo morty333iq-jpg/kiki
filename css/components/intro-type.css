@@ -1,0 +1,16 @@
+/* Match the existing “Let’s talk / На связи” headline, including emphasized text. */
+.site-info .site-intro h2,
+.site-info .site-intro h2 em {
+  font-family: "AmeSans", Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: clamp(28px, 3.2vw, 38px);
+  line-height: 1.18;
+  letter-spacing: -0.035em;
+}
+@media (max-width: 600px) {
+  .site-info .site-intro h2,
+  .site-info .site-intro h2 em {
+    font-size: 28px;
+  }
+}

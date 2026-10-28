@@ -1,0 +1,22 @@
+/* Пунктирные направляющие, отмечающие границы блоков (как на sharplink.com):
+   вертикальные пары линий по краям контейнера и горизонтальные двойные линии на стыках секций. */
+:root{--guide:rgba(41,43,50,.30)}
+html[data-theme='dark']{--guide:rgba(255,255,255,.20)}
+
+.guided{position:relative;isolation:isolate;background:var(--site-bg)}
+/* фон секций прозрачный, чтобы линии были видны за контентом */
+.guided>.site-info,.guided>.word-formats,.guided>.portfolio-footer,.guided .footer-bottom,.guided .hero-type{background:transparent}
+
+/* вертикальные линии: отступ 24px от края контента, чтобы они не касались текста;
+   внешняя пара ещё на 28px дальше */
+.guided::before,.guided::after{content:'';position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);box-sizing:border-box;
+  border-inline:1px dashed var(--guide);pointer-events:none;z-index:-1}
+.guided::before{width:calc(min(1120px,calc(100% - 48px)) + 48px)}
+.guided::after{width:calc(min(1120px,calc(100% - 48px)) + 104px)}
+
+/* горизонтальные линии на границах блоков: рисует js/site/guides.js (на всю ширину экрана) */
+.guide-lines{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:visible}
+.guide-lines i{position:absolute;left:50%;width:100vw;height:0;transform:translateX(-50%);border-top:1px dashed var(--guide)}
+
+@media(max-width:1200px){.guided::after{display:none}.guided::before{width:calc(100% - 16px)}}
+@media(max-width:700px){.guided::before{display:none}}

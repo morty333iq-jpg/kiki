@@ -1,0 +1,11 @@
+/* Интерактивный заголовок внизу сайта: буквы растворяются у курсора + HUD на canvas. */
+.hero-type{position:relative;overflow:hidden;background:var(--site-bg);padding:48px 24px 0;font-family:'AmeSans',Arial,sans-serif;color:var(--site-ink)}
+.hero-type-line{display:flex;gap:.28em;margin:0 auto;width:max-content;max-width:none;font-weight:600;line-height:1;letter-spacing:-.045em;white-space:nowrap;user-select:none;
+-webkit-mask-image:linear-gradient(#000 45%,transparent 96%);mask-image:linear-gradient(#000 45%,transparent 96%);padding:0 .06em .08em}
+.hero-type-word{display:flex;flex-shrink:0}
+.hero-type-word span{--s:0;--x:-9999px;--y:-9999px;--r:300px;background:linear-gradient(var(--site-ink),var(--site-muted));-webkit-background-clip:text;background-clip:text;color:transparent;
+-webkit-mask-image:radial-gradient(circle var(--r) at var(--x) var(--y),rgba(0,0,0,calc(1 - var(--s)*.97)) 0%,rgba(0,0,0,calc(1 - var(--s)*.6)) 40%,#000 100%);
+mask-image:radial-gradient(circle var(--r) at var(--x) var(--y),rgba(0,0,0,calc(1 - var(--s)*.97)) 0%,rgba(0,0,0,calc(1 - var(--s)*.6)) 40%,#000 100%)}
+.hero-type canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+@media(max-width:700px){.hero-type{padding:36px 16px 0}.hero-type-line{flex-direction:column;gap:.02em;align-items:flex-start;width:max-content;margin:0}}
+@media(prefers-reduced-motion:reduce){.hero-type canvas{display:none}}

@@ -1,0 +1,47 @@
+/* Portfolio greeting — scenery stays open, typography lives at the left. */
+.welcome-stage{display:block;min-height:max(720px,100svh);padding:0}
+.welcome-shade{position:absolute;inset:0;z-index:-1;pointer-events:none;mask-image:linear-gradient(to bottom,#000 0%,#000 54%,transparent 72%);-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 54%,transparent 72%);background:linear-gradient(90deg,rgba(5,40,74,.42) 0%,rgba(5,40,74,.42) 48%,rgba(5,40,74,.10) 68%,transparent 80%)}
+.welcome-header{position:relative;z-index:3;display:flex;align-items:center;gap:28px;width:min(1120px,calc(100% - 48px));height:100px;margin:auto;color:#fff}
+.welcome-wordmark{margin-right:auto;color:#fff;text-decoration:none;font-size:32px;font-weight:650;line-height:1;letter-spacing:-.06em}
+.welcome-wordmark span{color:#cbefb7}
+.welcome-nav{display:flex;align-items:center;gap:28px;padding:0 14px;border:1px solid #ffffff30;border-radius:8px;background:#092f2470;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.welcome-nav a{display:inline-flex;align-items:center;min-height:44px;color:#fff;text-decoration:none;font-size:14px;font-weight:550;text-shadow:0 1px 4px #05271980}
+.welcome-nav a:hover{text-decoration:underline;text-underline-offset:6px}
+.welcome-header .welcome-lang{min-width:44px;min-height:44px;padding:0 10px;color:#fff;border:1px solid #ffffff61;border-radius:8px;background:#133f2a4d;backdrop-filter:blur(10px) saturate(1.4);-webkit-backdrop-filter:blur(10px) saturate(1.4);box-shadow:inset 0 1px 1px #ffffff25,0 2px 6px #13322618;font-size:13px;font-weight:550}
+.welcome-content{position:relative;z-index:2;width:min(1120px,calc(100% - 48px));margin:auto;padding:clamp(60px,8vh,100px) 0 220px;color:#fff}
+.welcome-eyebrow{font-size:14px;font-weight:500;line-height:1.5;letter-spacing:.035em;color:#e3f0e2;margin:0 0 20px}
+.welcome-content h1{max-width:720px;margin:0;font-size:clamp(42px,4.2vw,60px);font-weight:500;line-height:1.08;letter-spacing:-.045em;text-wrap:balance}
+.welcome-title-soft{color:#dbefda}
+.welcome-description{max-width:515px;margin:26px 0 0;font-size:17px;line-height:1.6;font-weight:450;color:#fff;text-wrap:pretty}
+.welcome-actions{display:flex;align-items:center;flex-wrap:wrap;gap:14px;margin-top:30px}
+/* 41px visible surface, 44px accessible target. No heavy outer outline. */
+.welcome-primary,.welcome-glass{position:relative;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 12px;border:0;border-radius:8px;text-decoration:none;font-size:15px;font-weight:460;line-height:1.3;letter-spacing:.15px;white-space:nowrap;cursor:pointer;background:transparent}
+.welcome-primary{color:#252b29;transition:transform 180ms ease}
+.welcome-primary::before{content:'';position:absolute;inset:1.5px 0;z-index:-1;border-radius:8px;background:#f7f7f3;border:1px solid #e0e4dd;box-shadow:inset 0 1px 0 #ffffffcf,0 1px 2px #092c2510;transition:background 180ms ease}
+.welcome-primary:hover::before{background:#fff}
+.welcome-glass{color:#fff;transform:translate(var(--glass-tx,0px),var(--glass-ty,0px));transition:transform 220ms ease;text-shadow:0 1px 1px #00000033}
+.welcome-glass::before{content:'';position:absolute;inset:1.5px 0;z-index:-3;border-radius:8px;background:#ffffff0d}
+.glass-lens{position:absolute;inset:1.5px 0;z-index:-2;border-radius:8px;overflow:hidden;backdrop-filter:blur(16px) saturate(1.1);-webkit-backdrop-filter:blur(16px) saturate(1.1);background:#ffffff08;pointer-events:none}
+.glass-reflection{position:absolute;inset:1.5px 0;z-index:-1;border-radius:8px;overflow:hidden;background:linear-gradient(#ffffff1f 0%,#ffffff0a 100%);box-shadow:inset 0 -1px #0000001f,inset 0 -1px 2px #0000001a,inset 0 1px 1px #ffffff3d;pointer-events:none}
+.glass-reflection::before{content:'';position:absolute;inset:0;opacity:0;background:linear-gradient(#ffffff12 0%,#ffffff09 100%);box-shadow:inset 0 -1px #0000001f,inset 0 -1px 2px #0000001a,inset 0 2px 1px #ffffff99;transition:opacity 200ms ease}
+.glass-reflection::after{content:'';position:absolute;inset:0;opacity:0;background:radial-gradient(70px 38px at var(--glass-x,50%) var(--glass-y,0%),#ffffff0a,transparent 80%);transition:opacity 200ms ease}
+.welcome-glass:hover .glass-reflection::before,.welcome-glass:hover .glass-reflection::after{opacity:1}
+.glass-label{position:relative;z-index:1}
+.welcome-stage a:focus-visible,.welcome-stage button:focus-visible{outline:2px solid #fff;outline-offset:5px}
+@media(max-width:680px){
+ .welcome-stage{min-height:max(730px,100svh)}
+ .welcome-shade{mask-image:none;-webkit-mask-image:none;background:linear-gradient(180deg,#052b4d40 0%,#052b4d50 25%,#052b4d8f 40%,#052b4d8f 53%,#052b4d00 68%,transparent 100%)}
+ .welcome-header{width:calc(100% - 32px);height:80px;gap:12px}
+ .welcome-wordmark{font-size:28px}
+ .welcome-nav{gap:12px;padding:0 8px}
+ .welcome-nav a{font-size:14px}
+ .welcome-header .welcome-lang{min-width:40px;padding:0 8px}
+ .welcome-content{width:calc(100% - 32px);padding:54px 0 200px}
+ .welcome-eyebrow{font-size:14px;margin-bottom:16px}
+ .welcome-content h1{font-size:clamp(35px,10.1vw,44px);line-height:1.1;letter-spacing:-.04em;max-width:100%}
+ .welcome-description{font-size:16px;line-height:1.6;margin-top:22px;max-width:355px}
+ .welcome-actions{gap:10px;margin-top:26px}
+ .welcome-primary,.welcome-glass{min-height:44px;padding:0 12px;font-size:15px}
+}
+@media(max-width:360px){.welcome-header{gap:9px}.welcome-nav{gap:8px}.welcome-nav a{font-size:13px}.welcome-primary,.welcome-glass{padding:0 10px;font-size:14px}}
+@media(prefers-reduced-motion:reduce){.welcome-primary,.welcome-glass,.glass-reflection::before,.glass-reflection::after{transition:none;transform:none!important}}

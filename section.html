@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>kiki — Graphic Designer</title>
+    <meta
+      name="description"
+      content="kiki (Sergey, 18) — graphic designer portfolio: about me, services, process and contacts."
+    />
+    <link rel="icon" href="assets/favicons/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/site.css?v=2" />
+    <link rel="stylesheet" href="css/pages/section.css?v=lope1" />
+    <link rel="stylesheet" href="css/pages/chapter-visuals.css" />
+    <link rel="stylesheet" href="css/pages/chapter-checklist.css" />
+  </head>
+  <body class="section-page">
+    <div class="chapter-toggles">
+      <button id="lang-toggle" class="ref-button" type="button" aria-label="Switch to Russian">RU</button>
+    </div>
+
+    <div class="chapter-layout">
+      <aside class="chapter-side">
+        <div class="chapter-side-inner">
+          <p class="chapter-brand" data-i18n="sectionBrand">kiki — graphic designer</p>
+          <a class="chapter-back" href="index.html#about-kiki" data-page-link
+            ><span aria-hidden="true">←</span><span data-i18n="sectionBack">Back to home</span></a
+          >
+          <nav class="chapter-nav" data-chapter-nav aria-label="Chapters"></nav>
+        </div>
+      </aside>
+
+      <main class="chapter" id="intro">
+        <span class="chapter-pill" data-section="kicker"></span>
+        <h1 data-section="title"></h1>
+        <p class="chapter-lead" data-section="lead"></p>
+        <div class="chapter-actions" data-section="actions"></div>
+        <figure class="chapter-art"><img data-section="image" alt="" width="800" height="600" /></figure>
+
+        <article class="chapter-body" data-section="body"></article>
+
+        <aside class="chapter-cta">
+          <h2 data-i18n="sectionCtaTitle">Want your PC tuned?</h2>
+          <p data-i18n="sectionCtaText"></p>
+          <a class="ref-button" href="https://t.me/Kik1el" target="_blank" rel="noopener"
+            ><img src="assets/icons/social/telegram.svg" alt="" /><span data-i18n="sectionCtaButton"
+              >Message me in Telegram</span
+            ></a
+          >
+        </aside>
+
+        <nav class="chapter-pager" data-section="pager" aria-label="Chapters"></nav>
+      </main>
+    </div>
+
+    <!-- data -->
+    <script src="js/data/translations.js"></script>
+    <script src="js/data/sections.js?v=lope2"></script>
+    <!-- page -->
+    <script src="js/pages/chapter-visuals.js"></script>
+    <script src="js/pages/section.js"></script>
+    <script src="js/pages/chapter-checklist.js"></script>
+    <script src="js/pages/chapter-ruler.js"></script>
+    <script src="js/site/folders.js"></script>
+    <script src="js/site/settings.js"></script>
+  </body>
+</html>
