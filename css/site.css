@@ -7,13 +7,13 @@
   font-display: swap;
 }
 :root {
-  --site-bg: #d1d4dd;
+  --site-bg: #e7e8eb;
   --site-ink: #292b32;
-  --site-muted: #585c68;
-  --site-panel: #bfc3cf;
-  --site-icon: #8f95a3;
+  --site-muted: #666a73;
+  --site-panel: #d4d6da;
+  --site-icon: #9ea2aa;
   --site-icon-ink: #343d63;
-  --site-line: rgba(41, 43, 50, 0.14);
+  --site-line: rgba(45, 47, 55, 0.12);
 }
 html {
   scroll-behavior: smooth;
@@ -143,7 +143,7 @@ body {
 }
 .site-tool-item p {
   margin: 0;
-  color: #585c68;
+  color: #666a73;
   font-size: 15px;
   line-height: 1.4;
 }
@@ -456,7 +456,7 @@ body {
   min-height: 286px;
   padding: 34px 38px;
   border-radius: 14px;
-  background: #bfc3cf;
+  background: #d4d6da;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -480,7 +480,7 @@ body {
 .community-card p {
   margin: 0;
   max-width: 500px;
-  color: #585c68;
+  color: #666a73;
   font-size: 17px;
   line-height: 1.45;
 }

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kiki — orb</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/components/orb.css">
+<style>
+  body { margin: 0; background: var(--site-bg); color: var(--site-ink); font-family: 'AmeSans', ui-sans-serif, system-ui, sans-serif; }
+  .orb-demo { min-height: 100svh; display: grid; place-items: center; padding: 24px; }
+  .orb-demo p { position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%); margin: 0; font-size: 13px; letter-spacing: .04em; color: var(--site-muted); }
+</style>
+</head>
+<body>
+<main class="orb-demo">
+  <div class="kiki-orb" data-orb><canvas aria-hidden="true"></canvas></div>
+  <p>Move the cursor over it, drag to spin, click to squeeze</p>
+</main>
+<script src="js/site/orb.js"></script>
+</body>
+</html>

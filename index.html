@@ -14,7 +14,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/gameboy.css" />
-    <link rel="stylesheet" href="css/site.css?v=2" />
+    <link rel="stylesheet" href="css/site.css" />
     <link rel="stylesheet" href="css/components/folders.css" />
     <link rel="stylesheet" href="css/components/mail.css" />
     <link rel="stylesheet" href="css/components/design-studio.css" />
@@ -22,23 +22,19 @@
     <link rel="stylesheet" href="css/components/community-glass.css" />
     <link rel="stylesheet" href="css/components/conversation-banner.css?v=6" />
     <link rel="stylesheet" href="css/components/word-formats.css" />
+    <link rel="stylesheet" href="css/components/apps-marquee.css" />
     <link rel="stylesheet" href="css/components/intro-type.css" />
     <link rel="stylesheet" href="css/components/mini-cards.css?v=9" />
-    <link rel="stylesheet" href="css/components/hero-pixel.css?v=creative1" />
-    <link rel="stylesheet" href="css/components/hero-welcome.css?v=creative1" />
-    <link rel="stylesheet" href="css/components/hero-scrub.css?v=5" />
-    <link rel="stylesheet" href="css/components/hero-type.css?v=3" />
-    <link rel="stylesheet" href="css/components/guides.css?v=3" />
+        <link rel="stylesheet" href="css/components/hero-welcome.css?v=creative1" />
+    <link rel="stylesheet" href="css/components/kiki-hero.css" />
+    <link rel="stylesheet" href="css/components/orb.css" />
   </head>
   <body>
-    <div class="scrub-hero" id="scrub-hero">
-    <main class="stage welcome-stage" aria-labelledby="welcome-title">
-      <div class="hero-landscape" aria-hidden="true">
-        <img src="assets/images/hero-scrub-poster.jpg" alt="" width="1344" height="768" fetchpriority="high" decoding="async" />
-        <video muted playsinline preload="auto" poster="assets/images/hero-scrub-poster.jpg" data-video-desktop="assets/videos/hero-scrub-desktop.mp4?v=2" data-video-mobile="assets/videos/hero-scrub-mobile.mp4?v=2" tabindex="-1" disablepictureinpicture></video>
-      </div>
-      <div class="welcome-shade" aria-hidden="true"></div>
-      <header class="welcome-header">
+    <main class="kiki-hero" id="hero" aria-labelledby="hero-title">
+      <div class="kh-sticky">
+        <video class="kh-idle" src="assets/hero/idle.mp4" poster="assets/hero/idle-poster.webp" autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1" disablepictureinpicture></video>
+        <canvas class="kh-canvas" aria-hidden="true"></canvas>
+        <header class="welcome-header">
         <a class="welcome-wordmark" href="index.html" aria-label="kiki home">kiki<span aria-hidden="true">.</span></a>
         <nav class="welcome-nav" aria-label="Portfolio navigation">
           <a href="section.html?s=works" data-page-link data-welcome="navWork">Work</a>
@@ -47,19 +43,19 @@
         </nav>
         <button id="lang-toggle" class="welcome-lang ref-button" type="button" aria-label="Switch to Russian">RU</button>
       </header>
-      <div class="welcome-content">
-        <p class="welcome-eyebrow" data-welcome="eyebrow">kiki / graphic design</p>
-        <h1 id="welcome-title"><span data-welcome="title0">Design worth</span><br /><span class="welcome-title-soft" data-welcome="title1">a closer look.</span></h1>
-        <p class="welcome-description" data-welcome="description">Posters, brand identities, and visuals with a character of their own. I'm kiki — I bring them together with care for every detail.</p>
-        <div class="welcome-actions">
-          <a class="welcome-primary" href="section.html?s=works" data-page-link><span data-welcome="works">See my work</span></a>
-          <a class="welcome-glass" href="section.html?s=contact" data-page-link><span class="glass-lens" aria-hidden="true"></span><span class="glass-reflection" aria-hidden="true"></span><span class="glass-label" data-welcome="contact">Let's talk</span></a>
+        <div class="kh-text">
+          <p class="welcome-eyebrow" data-welcome="eyebrow">kiki / graphic design</p>
+          <h1 id="hero-title"><span data-welcome="title0">Design worth</span><br /><span class="welcome-title-soft" data-welcome="title1">a closer look.</span></h1>
+          <p class="welcome-description" data-welcome="description">Posters, brand identities, and visuals with a character of their own. I'm kiki — I bring them together with care for every detail.</p>
+          <div class="welcome-actions">
+            <a class="welcome-primary" href="section.html?s=works" data-page-link><span data-welcome="works">See my work</span></a>
+            <a class="welcome-glass" href="section.html?s=contact" data-page-link><span class="glass-lens" aria-hidden="true"></span><span class="glass-reflection" aria-hidden="true"></span><span class="glass-label" data-welcome="contact">Let's talk</span></a>
+          </div>
         </div>
+        <div class="kh-hint" aria-hidden="true">Scroll<i></i></div>
       </div>
-    </main>
-    </div>
+        </main>
 
-    <div class="guided">
     <section class="site-info" id="about">
       <div class="site-wrap">
 <div class="site-intro">
@@ -331,6 +327,13 @@
       <div class="wf-board" aria-hidden="true"><div class="wf-letters"></div><div class="wf-highlights"></div></div>
       <p class="wf-accessible" data-wf="accessible"></p>
     </section>
+    <section class="apps-banner" id="apps" aria-labelledby="apps-title">
+      <div class="ab-heading">
+        <h2 id="apps-title">Мои <span>программы</span></h2>
+        <p id="apps-intro">Использую самые популярные инструменты для дизайна, видео и звука — список постоянно пополняется</p>
+      </div>
+      <div class="ab-mq" aria-hidden="true"><div class="ab-rows" id="ab-rows"></div></div>
+    </section>
     <footer class="portfolio-footer" id="contact" aria-labelledby="footer-title">
       <div class="footer-grid-pattern" aria-hidden="true"></div>
       <div class="site-wrap footer-layout">
@@ -362,37 +365,29 @@
           </nav>
           <div class="footer-meta"><p data-i18n="endPersonal">From the first idea to the final detail — together.</p><p>© 2026 kiki <span data-i18n="endRole">/ Graphic design</span></p><p class="footer-credit"><span data-i18n="endMade">Design &amp; ideas by</span> <a href="section.html?s=about" data-page-link>kiki</a></p></div>
         </div>
-        <div class="footer-card-perspective">
-          <article class="footer-feature-card">
-            <div class="footer-card-foil" aria-hidden="true"></div><div class="footer-card-edge" aria-hidden="true"></div>
-            <div class="footer-feature-image"><img src="assets/images/footer-pixel-art.webp" alt="Pixel-art creative island with an easel, sea and bright clouds" width="896" height="1200" loading="lazy" /><div class="footer-card-shine" aria-hidden="true"></div></div>
-            <div class="footer-glass"><p><span data-i18n="endCardTitle">Your idea. My design.</span> <span class="footer-glass-soft" data-i18n="endCardText">Posters, covers and visuals with a character of their own.</span></p><a class="footer-card-cta" href="https://t.me/Kik1el" target="_blank" rel="noopener"><span data-i18n="endCta">Let’s talk</span><span aria-hidden="true">↗</span></a></div>
-          </article>
-          <p class="footer-card-caption"><span>kiki / pixel art</span><span>001 — CREATIVE ISLAND</span></p>
+        <div class="footer-card-perspective footer-orb-wrap">
+          <div class="kiki-orb" data-orb data-word="kiki" role="img" aria-label="Interactive particle sphere: turn it until the word kiki appears"><canvas aria-hidden="true"></canvas></div>
+          <p class="footer-card-caption"><span class="hint-find">DRAG — FIND THE WORD</span><span class="hint-found">FOUND IT — kiki</span><span>kiki / orb</span></p>
         </div>
       </div>
       <div class="footer-bottom"><div class="site-wrap"><a href="index.html#about" class="footer-wordmark" aria-label="kiki homepage">kiki</a><span data-i18n="endBottom">Made with care. Not on autopilot.</span><a href="#about" class="footer-top-link"><span data-i18n="endTop">Back to top</span><span aria-hidden="true">↑</span></a></div></div>
-      <div class="hero-type" id="hero-type"><h2 class="hero-type-line">graphic kiki designer</h2><canvas aria-hidden="true"></canvas></div>
     </footer>
-    </div>
 
     <!-- data -->
     <script src="js/data/translations.js"></script>
     <script src="js/data/sections.js"></script>
     <!-- site -->
-    <script src="js/site/hero-meadow.js?v=creative2"></script>
-    <script src="js/site/hero-scrub.js?v=4"></script>
+    <script src="js/site/kiki-hero.js"></script>
+    <script src="js/site/orb.js"></script>
     <script src="js/site/folders.js"></script>
     <script src="js/site/settings.js"></script>
     <script src="js/site/design-studio.js"></script>
     <script src="js/site/conversation-banner.js?v=6"></script>
     <script src="js/site/word-formats.js"></script>
+    <script src="js/site/apps-banner.js"></script>
     <script src="js/site/mini-cards.js?v=9"></script>
     <script src="js/site/reveal.js"></script>
     <script src="js/site/mail.js"></script>
     <script src="js/site/portfolio-footer.js"></script>
-    <script src="js/site/hero-glyphs.js?v=1"></script>
-    <script src="js/site/hero-type.js?v=6"></script>
-    <script src="js/site/guides.js?v=1"></script>
   </body>
 </html>
