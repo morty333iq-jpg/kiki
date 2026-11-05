@@ -30,18 +30,17 @@
     <link rel="stylesheet" href="css/components/orb.css" />
   </head>
   <body>
+    <!-- Turns the white background of the logo video into transparency and tints the mark with the site ink colour. -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+      <filter id="mark-ink" x="0" y="0" width="1" height="1" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 0.161  0 0 0 0 0.169  0 0 0 0 0.196  -0.259 -0.873 -0.088 1.22 0"/></filter>
+      <filter id="mark-ink-dark" x="0" y="0" width="1" height="1" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 0.945  0 0 0 0 0.949  0 0 0 0 0.961  -0.259 -0.873 -0.088 1.22 0"/></filter>
+    </svg>
     <main class="kiki-hero" id="hero" aria-labelledby="hero-title">
       <div class="kh-sticky">
         <video class="kh-idle" src="assets/hero/idle.mp4" poster="assets/hero/idle-poster.webp" autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1" disablepictureinpicture></video>
         <canvas class="kh-canvas" aria-hidden="true"></canvas>
         <header class="welcome-header">
-        <a class="welcome-wordmark" href="index.html" aria-label="kiki home">kiki<span aria-hidden="true">.</span></a>
-        <nav class="welcome-nav" aria-label="Portfolio navigation">
-          <a href="section.html?s=works" data-page-link data-welcome="navWork">Work</a>
-          <a href="section.html?s=about" data-page-link data-welcome="navAbout">About</a>
-          <a href="section.html?s=contact" data-page-link data-welcome="navContact">Contact</a>
-        </nav>
-        <button id="lang-toggle" class="welcome-lang ref-button" type="button" aria-label="Switch to Russian">RU</button>
+        <a class="welcome-wordmark" href="index.html" aria-label="kiki home"><i class="welcome-mark" aria-hidden="true"><video src="assets/brand/mark-loop.mp4" poster="assets/brand/mark-poster.webp" autoplay muted loop playsinline preload="auto" tabindex="-1" disablepictureinpicture></video></i>kiki<span aria-hidden="true">.</span></a>
       </header>
         <div class="kh-text">
           <p class="welcome-eyebrow" data-welcome="eyebrow">kiki / graphic design</p>
@@ -374,6 +373,7 @@
     </footer>
 
     <!-- data -->
+    <script>(function(){var v=document.querySelector('.welcome-mark video');if(v&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();}})();</script>
     <script src="js/data/translations.js"></script>
     <script src="js/data/sections.js"></script>
     <!-- site -->
