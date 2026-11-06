@@ -1,0 +1,197 @@
+/* Mobile adaptation — loaded last, only overrides what breaks on phones. */
+
+/* ---------- Base: no iOS text zoom, no grey tap flash, safe areas ---------- */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+a,
+button,
+[role='button'] {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* ---------- Scroll reveal: never push blocks sideways past the screen edge ----------
+   The reveal used translateX(±72px) before showing a block, which made the page
+   wider than the phone (horizontal wobble). On phones it only slides up. */
+@media (max-width: 820px) {
+  [data-aos='fade-right'],
+  [data-aos='fade-left'],
+  [data-aos].out-left {
+    transform: translate3d(0, 40px, 0);
+  }
+  [data-aos].in {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* ---------- Phones: notches / rounded corners in landscape ---------- */
+@media (max-width: 920px) {
+  .kiki-hero .welcome-header {
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+  }
+}
+
+/* ---------- Header: fits 320px screens ---------- */
+@media (max-width: 400px) {
+  .kiki-hero .welcome-wordmark {
+    font-size: 24px;
+  }
+  .welcome-mark {
+    width: 32px;
+    height: 32px;
+    margin-right: 6px;
+  }
+  .welcome-header {
+    gap: 8px;
+  }
+  .welcome-nav {
+    gap: 8px;
+    padding: 0 8px;
+  }
+  .welcome-nav a {
+    font-size: 13px;
+  }
+  .welcome-header .welcome-lang {
+    min-width: 40px;
+    padding: 0 6px;
+  }
+}
+@media (max-width: 340px) {
+  .kiki-hero .welcome-wordmark {
+    font-size: 21px;
+  }
+  .welcome-mark {
+    width: 28px;
+    height: 28px;
+    margin-right: 4px;
+  }
+  .welcome-header {
+    gap: 6px;
+  }
+  .welcome-nav {
+    gap: 6px;
+    padding: 0 6px;
+  }
+  .welcome-nav a {
+    font-size: 12.5px;
+  }
+  .welcome-header .welcome-lang {
+    min-width: 36px;
+    padding: 0 4px;
+    font-size: 12px;
+  }
+}
+
+/* ---------- Hero on portrait phones ---------- */
+@media (max-aspect-ratio: 1/1) {
+  /* the first screen never exceeds the visible area (no jump when the browser bar hides) */
+  .kh-sticky {
+    height: 100svh;
+  }
+  .kh-text .welcome-actions {
+    flex-wrap: wrap;
+  }
+}
+/* short screens (iPhone SE, small Androids): keep the buttons clear of the character */
+@media (max-aspect-ratio: 1/1) and (max-height: 720px) {
+  .kh-idle,
+  .kh-canvas {
+    left: -42vw;
+    width: 142vw;
+  }
+  .kh-text {
+    top: 84px;
+  }
+  .kh-text h1 {
+    font-size: clamp(32px, 9.4vw, 42px);
+  }
+  .kh-text .welcome-description {
+    font-size: 15px;
+    line-height: 1.45;
+    margin-top: 14px;
+  }
+}
+@media (max-aspect-ratio: 1/1) and (max-height: 600px) {
+  .kh-idle,
+  .kh-canvas {
+    left: -30vw;
+    width: 130vw;
+  }
+  .kh-text .welcome-description {
+    font-size: 14px;
+  }
+  .kh-hint {
+    display: none;
+  }
+}
+
+/* ---------- Hero on phones held sideways ---------- */
+@media (max-height: 520px) and (min-aspect-ratio: 1/1) {
+  .kiki-hero .welcome-header {
+    height: 64px;
+  }
+  .kh-text {
+    top: 50%;
+  }
+  .kh-text h1 {
+    font-size: clamp(30px, 6vw, 44px);
+  }
+  .kh-text .welcome-description {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-top: 10px;
+    max-width: 380px;
+  }
+  .kh-hint {
+    display: none;
+  }
+}
+
+/* ---------- Gmail block: status card must not cover the letter ---------- */
+@media (max-width: 560px) {
+  .mail-stage {
+    height: 480px;
+  }
+  .mail-status {
+    top: 14px;
+    width: 72%;
+    min-width: 0;
+  }
+  .mail-preview {
+    top: 222px;
+  }
+  .mail-actions .mail-action,
+  .mail-action {
+    min-height: 48px;
+  }
+}
+@media (max-width: 380px) {
+  .mail-status {
+    width: 80%;
+  }
+  .mail-action {
+    gap: 8px;
+  }
+}
+
+/* ---------- Folder cards: frosted pocket must not blur the picture on touch ---------- */
+@media (hover: none) {
+  .folder-pocket {
+    height: 22%;
+  }
+}
+
+/* ---------- Narrow screens: long words / emails never push the layout ---------- */
+@media (max-width: 480px) {
+  h1,
+  h2,
+  h3,
+  p,
+  .mail-action,
+  .site-lead {
+    overflow-wrap: anywhere;
+  }
+}
